@@ -4,56 +4,248 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Poppins", sans-serif;
+        color: #1e293b;
+        min-height: 100vh;
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
       }
+
+      /* Background */
+      .background-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom right, #1e3a8a, #2563eb);
+        opacity: 0.95;
+        z-index: -1;
+      }
+
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      /* Navigation */
+      header {
+        position: relative;
+        z-index: 10;
+        padding: 1.5rem 1rem;
+      }
+
+      .nav-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @media (min-width: 640px) {
+        .nav-container {
+          flex-direction: row;
+        }
+      }
+
+      .logo {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .logo {
+          margin-bottom: 0;
+        }
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      @media (min-width: 640px) {
+        nav {
+          width: auto;
+        }
+      }
+
+      .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      @media (min-width: 640px) {
+        .nav-list {
+          gap: 1.25rem;
+        }
+      }
+
       .nav-item {
         transition: all 0.3s ease;
+        list-style: none;
       }
+
       .nav-item:hover {
         transform: translateY(-3px);
       }
-      .info-card {
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        background-color: white;
+        color: #1d4ed8;
+        text-decoration: none;
+        font-weight: 500;
         transition: all 0.3s ease;
       }
-      .info-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+      .nav-link:hover {
+        background-color: #1d4ed8;
+        color: white;
+      }
+
+      .nav-link.active {
+        background-color: #1d4ed8;
+        color: white;
+      }
+
+      .nav-link.active:hover {
+        background-color: #1e40af;
+      }
+
+      .nav-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      /* Main Content */
+      main {
+        position: relative;
+        z-index: 10;
+        padding: 8rem 1rem;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.25;
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .hero-highlight {
+        color: #bfdbfe;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: white;
+        margin-top: 1rem;
+      }
+
+      .hero-description {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        color: #dbeafe;
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.75rem 2rem;
+        background-color: white;
+        color: #1d4ed8;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #1d4ed8;
+        color: white;
+      }
+
+      /* Animations */
+      .hero-text {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-title {
+        animation-delay: 0.1s;
+      }
+
+      .hero-subtitle {
+        animation-delay: 0.2s;
+      }
+
+      .hero-description {
+        animation-delay: 0.3s;
+      }
+
+      .cta-button {
+        animation-delay: 0.4s;
       }
     </style>
   </head>
 
-  <body class="min-h-screen text-gray-800">
+  <body>
     <!-- Background -->
-    <div
-      class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-95"
-    ></div>
+    <div class="background-overlay"></div>
 
     <!-- Navigation -->
-    <header class="relative z-10 py-6 px-4 sm:px-6 lg:px-8">
-      <div
-        class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center"
-      >
-        <a href="home.html" class="text-4xl font-bold text-white mb-4 sm:mb-0"
-          >AL</a
-        >
+    <header>
+      <div class="container nav-container">
+        <a href="home.html" class="logo">AL</a>
 
-        <nav class="w-full sm:w-auto">
-          <ul class="flex flex-wrap justify-center gap-3 sm:gap-5">
+        <nav>
+          <ul class="nav-list">
             <li class="nav-item">
-              <a
-                href="home.html"
-                class="flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg bg-white text-blue-700 hover:bg-blue-700 hover:text-white"
-              >
+              <a href="home.html" class="nav-link">
                 <svg
-                  class="w-5 h-5"
+                  class="nav-icon"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 576 512"
                 >
@@ -66,12 +258,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a
-                href="about.html"
-                class="flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg bg-blue-700 text-white hover:bg-blue-800"
-              >
+              <a href="about.html" class="nav-link active">
                 <svg
-                  class="w-5 h-5"
+                  class="nav-icon"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -84,12 +273,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a
-                href="skill.html"
-                class="flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg bg-white text-blue-700 hover:bg-blue-700 hover:text-white"
-              >
+              <a href="skill.html" class="nav-link">
                 <svg
-                  class="w-5 h-5"
+                  class="nav-icon"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 576 512"
                 >
@@ -102,12 +288,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a
-                href="projects.html"
-                class="flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg bg-white text-blue-700 hover:bg-blue-700 hover:text-white"
-              >
+              <a href="projects.html" class="nav-link">
                 <svg
-                  class="w-5 h-5"
+                  class="nav-icon"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -120,12 +303,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a
-                href="contact.html"
-                class="flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg bg-white text-blue-700 hover:bg-blue-700 hover:text-white"
-              >
+              <a href="contact.html" class="nav-link">
                 <svg
-                  class="w-5 h-5"
+                  class="nav-icon"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -143,23 +323,19 @@
     </header>
 
     <!-- Main Content -->
-    <main class="relative z-10 py-32 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto text-center">
-        <h1 class="text-5xl font-bold leading-tight text-white hero-text">
-          Hi, I'm <span class="text-blue-200">AL</span>
+    <main>
+      <div class="container">
+        <h1 class="hero-title hero-text">
+          Hi, I'm <span class="hero-highlight">AL</span>
         </h1>
-        <p class="mt-4 text-xl text-white hero-text">
+        <p class="hero-subtitle hero-text">
           Creative Director & UI/UX Designer
         </p>
-        <p class="mt-2 text-md text-blue-100 hero-text max-w-2xl mx-auto">
+        <p class="hero-description hero-text">
           I transform ideas into beautiful, functional, and user-centric digital
           experiences. Let's build something amazing together.
         </p>
-        <a
-          href="projects.html"
-          class="mt-8 inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition-colors"
-          >View My Work</a
-        >
+        <a href="projects.html" class="cta-button hero-text">View My Work</a>
       </div>
     </main>
   </body>
