@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      }
+      .nav-item {
+        transition: all 0.3s ease;
+      }
+      .nav-item:hover {
+        transform: translateY(-3px);
+      }
+      .project-card {
+        transition: all 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen text-gray-800">
+    <!-- Background -->
+    <div
+      class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-95"
+    ></div>
+
+    <!-- Navigation -->
+    <header class="relative z-10 py-6 px-4 sm:px-6 lg:px-8">
+      <div
+        class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center"
+      >
+        <a href="home.html" class="text-4xl font-bold text-white mb-4 sm:mb-0"
+          >AL</a
+        >
+
+        <nav class="w-full sm:w-auto">
+          <ul class="flex flex-wrap justify-center gap-3 sm:gap-5">
+            <li class="nav-item">
+              <a
+                href="home.html"
+                class="bg-white text-blue-700 hover:bg-blue-700 hover:text-white flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg transition-colors"
+              >
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="about.html"
+                class="bg-white text-blue-700 hover:bg-blue-700 hover:text-white flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg transition-colors"
+              >
+                About Me
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="skill.html"
+                class="bg-white text-blue-700 hover:bg-blue-700 hover:text-white flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg transition-colors"
+              >
+                Skills
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="projects.html"
+                class="bg-blue-700 text-white hover:bg-blue-800 flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg transition-colors"
+              >
+                Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="contact.html"
+                class="bg-white text-blue-700 hover:bg-blue-700 hover:text-white flex items-center gap-2 px-5 py-3 rounded-xl shadow-lg transition-colors"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl p-10">
+          <h1 class="text-4xl font-bold text-blue-700 mb-8 text-center">
+            My Projects
+          </h1>
+
+          <div class="flex overflow-x-auto space-x-6 pb-4">
+            <!-- Project Card -->
+            <div
+              class="project-card bg-blue-50 rounded-xl p-6 shadow-md flex-none w-72"
+            >
+              <img
+                src="img/cepu.png"
+                alt="Cepu Apps"
+                class="rounded-lg mb-4 h-40 w-full object-cover"
+              />
+              <h3 class="text-xl text-center font-semibold text-blue-800 mb-2">
+                <a href="https://github.com/alishlh/MasterApps.git"
+                  >Cepu Apps</a
+                >
+              </h3>
+              <p class="text-gray-600 text-center text-sm">
+                Aplikasi ini bertujuan untuk mengadukan pelanggaran-pelanggaran
+                masyarakat.
+              </p>
+            </div>
+
+            <div
+              class="project-card bg-blue-50 rounded-xl p-6 shadow-md flex-none w-72"
+            >
+              <img
+                src="img/perpus.png"
+                alt="PerpusYuk"
+                class="rounded-lg mb-4 h-40 w-full object-cover"
+              />
+              <h3 class="text-xl font-semibold text-center text-blue-800 mb-2">
+                <a href="https://github.com/alishlh/PerpusYuk.git">PerpusYuk</a>
+              </h3>
+              <p class="text-gray-600 text-center text-sm">
+                Aplikasi ini memantau dan mencatat peminjaman buku perpustakaan.
+              </p>
+            </div>
+
+            <div
+              class="project-card bg-blue-50 rounded-xl p-6 shadow-md flex-none w-72"
+            >
+              <img
+                src="img/travel.png"
+                alt="Ahsan Tour"
+                class="rounded-lg mb-4 h-40 w-full object-cover"
+              />
+              <h3 class="text-xl text-center font-semibold text-blue-800 mb-2">
+                <a href="#">Ahsan Tour</a>
+              </h3>
+              <p class="text-gray-600 text-center text-sm">
+                Aplikasi pendataan lengkap untuk jasa travel umroh.
+              </p>
+            </div>
+
+            <div
+              class="project-card bg-blue-50 rounded-xl p-6 shadow-md flex-none w-72"
+            >
+              <img
+                src="img/tiket.png"
+                alt="Project Four"
+                class="rounded-lg mb-4 h-40 w-full object-cover"
+              />
+              <h3 class="text-xl text-center font-semibold text-blue-800 mb-2">
+                <a href="https://github.com/alishlh/ticketing_apps.git"
+                  >TicketingApps</a
+                >
+              </h3>
+              <p class="text-gray-600 text-center text-sm">
+                Aplikasi ini bertujuan untuk mempermudah banyak orang dalam
+                memesan tiket.
+              </p>
+            </div>
+
+            <div
+              class="project-card bg-blue-50 rounded-xl p-6 shadow-md flex-none w-72"
+            >
+              <img
+                src="img/kasir.png"
+                alt="Project Five"
+                class="rounded-lg mb-4 h-40 w-full object-cover"
+              />
+              <h3 class="text-xl text-center font-semibold text-blue-800 mb-2">
+                <a href="#">D` Kasir</a>
+              </h3>
+              <p class="text-gray-600 text-center text-sm">
+                Aplikasi ini di rancang dengan tujuan untuk mempermudah
+                bisnismen mengatur keuangan perusahaan nya.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
